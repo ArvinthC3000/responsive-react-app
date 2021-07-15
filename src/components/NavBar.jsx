@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaTypo3, FaTimes, FaBars } from 'react-icons/fa';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from './Button';
 import './NavBar.css';
 
@@ -18,6 +18,11 @@ const NavBar = () => {
       setButton(true);
     }
   };
+
+  // Called after page renders
+  useEffect(() => {
+    showButton();
+  }, []);
 
   window.addEventListener('resize', showButton);
 
